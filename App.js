@@ -1,11 +1,16 @@
-import React from 'react';
-import NavigationContainer from "@react-navigation/native/src/NavigationContainer";
-import Navigation from "./Navigations/Navigation";
+import React, {Component} from 'react';
+import SearchBar from "react-native"
 
-export default function App() {
-  return (
-        <NavigationContainer>
-          <Navigation/>
-        </NavigationContainer>
-  );
+class App extends Component {
+    onSearchSubmit(term) {
+        console.log(term)
+    }
+
+    render() {
+        return (
+            <div className="ui container" style={{marginTop: '10px'}}>
+                <SearchBar onSubmit={this.onSearchSubmit}/>
+            </div>
+        )
+    }
 }
